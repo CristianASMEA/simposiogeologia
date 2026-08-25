@@ -906,3 +906,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("navToggle");
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // Alternar clases al hacer clic en la hamburguesa
+    if (navToggle && navbar) {
+        navToggle.addEventListener("click", () => {
+            navToggle.classList.toggle("active");
+            navbar.classList.toggle("active");
+        });
+
+        // Cerrar automáticamente el menú al hacer clic en cualquier enlace (opcional pero recomendado)
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                navToggle.classList.remove("active");
+                navbar.classList.remove("active");
+            });
+        });
+    }
+});
