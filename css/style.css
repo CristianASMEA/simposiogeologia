@@ -1025,20 +1025,6 @@ body {
     }
 
 
-    .search {
-
-        margin-right: 15px;
-
-    }
-
-
-    .search input {
-
-        width: 100px;
-
-    }
-
-
     .nav-menu {
 
         gap: 12px;
@@ -1134,24 +1120,6 @@ body {
     .logo {
 
         width: 180px;
-
-    }
-
-
-    .search {
-
-        margin-left: auto;
-
-        margin-right: 0;
-
-        padding-top: 0;
-
-    }
-
-
-    .search input {
-
-        width: 100px;
 
     }
 
@@ -1269,12 +1237,6 @@ body {
 
     }
 
-
-    .search input {
-
-        width: 85px;
-
-    }
 
 
     .contenido_inicio {
