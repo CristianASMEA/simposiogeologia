@@ -1102,8 +1102,6 @@ body {
 ========================================================= */
 
 @media (max-width: 768px) {
-
-
     .header_contenido {
 
         min-height: 70px;
@@ -1120,13 +1118,6 @@ body {
     .logo {
 
         width: 180px;
-
-    }
-
-
-    .navbar {
-
-        display: none;
 
     }
 
