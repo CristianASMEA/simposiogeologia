@@ -928,3 +928,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("navToggle");
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.querySelectorAll(".nav-link, .nav-link-btn");
+
+    // Abrir o cerrar el menú al hacer clic en el botón hamburguesa
+    if (navToggle && navbar) {
+        navToggle.addEventListener("click", () => {
+            navToggle.classList.toggle("active");
+            navbar.classList.toggle("active");
+        });
+    }
+
+    // Cerrar automáticamente el menú al hacer clic en cualquier opción (en móviles)
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navToggle.classList.remove("active");
+                navbar.classList.remove("active");
+            }
+        });
+    });
+});
