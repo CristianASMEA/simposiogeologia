@@ -162,7 +162,7 @@ body {
 /* Logo responsivo */
 .logo {
     width: 100%;
-    max-width: 450px; /* Tamaño máximo controlado */
+    max-width: 500px; /* Tamaño máximo controlado */
     flex-shrink: 1;
 }
 
@@ -178,6 +178,7 @@ body {
 
 /* Alineación de la barra de navegación a la derecha */
 .navbar {
+    
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -260,6 +261,7 @@ body {
     }
 
     .nav-link, .nav-link-btn {
+        text-decoration: none;
         font-size: 18px;
     }
 
@@ -279,6 +281,7 @@ body {
 
 
 .nav-link:hover {
+    text-decoration: none;
 
     color: #e36c16;
 
@@ -286,13 +289,14 @@ body {
 
 
 .nav-link.active {
-
+    text-decoration: none;
     color: #e36c16;
 
 }
 
 
 .nav-link.active::after {
+    text-decoration: none;
 
     content: "";
 
@@ -306,7 +310,7 @@ body {
 
     height: 2px;
 
-    background: #e36c16;
+
 
 }
 
@@ -314,6 +318,7 @@ body {
 
 
 .nav-link-btn {
+    text-decoration: none;
 
     position: relative;
 
@@ -345,18 +350,21 @@ body {
 .nav-link-btn:hover {
 
     color: #ffffff;
+    text-decoration: none;
 
 }
 
 
 .nav-link-btn.active {
 
+    text-decoration: none;
     color: #e36c16;
 
 }
 
 
 .nav-link-btn.active::after {
+    text-decoration: none;
 
     content: "";
 
@@ -979,7 +987,7 @@ body {
 
 
     .nav-link {
-
+        text-decoration: none;
         font-size: 14px;
 
     }
@@ -1027,6 +1035,7 @@ body {
 
     .nav-menu {
 
+        text-decoration: none;
         gap: 12px;
 
     }
@@ -1034,6 +1043,7 @@ body {
 
     .nav-link {
 
+        text-decoration: none;
         font-size: 12px;
 
     }
