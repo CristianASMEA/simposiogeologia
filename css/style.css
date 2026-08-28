@@ -7,6 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+       text-decoration: none;
+       color: #3a3a3a;
 
 }
 
@@ -123,44 +125,15 @@ body {
 }
 
 
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo {
-    margin-top: 18px;
-    margin-left: 50px;
-    width: 700px;
-    flex-shrink: 0;
-}
-
-
-.logo a {
-
-    display: block;
-
-}
-
-
-.logo img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-}
-
-
 /* =========================================================
    MENÚ
 ========================================================= */
 
 /* Logo responsivo */
 .logo {
+
+        margin-top: 18px;
+    margin-left: 50px;
     width: 100%;
     max-width: 500px; /* Tamaño máximo controlado */
     flex-shrink: 1;
@@ -590,9 +563,9 @@ body {
         sans-serif;
 
     font-size: clamp(
-        38px,
+        33px,
         4vw,
-        60px
+        55px
     );
 
     font-weight: 600;
@@ -1031,6 +1004,77 @@ body {
         width: 250px;
 
     }
+
+
+
+@media (max-width: 900px) {
+    /* Estilos del menú desplegable móvil */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Oculto fuera de la pantalla a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribuye el menú arriba y el isotipo al fondo */
+        align-items: center;
+        padding-top: 90px;    /* Margen/Padding superior para despejar la hamburguesa */
+        padding-bottom: 40px; /* Margen inferior para el isotipo */
+        transition: right 0.4s ease-in-out;
+        z-index: 1500;
+    }
+
+    /* Ocultar isotipo móvil en computadoras y mostrar solo en móviles */
+    .nav-isotipo-mobile {
+        display: block;
+        width: 140px;
+        margin-top: 20px;
+    }
+
+    .nav-isotipo-mobile img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Clase que activa la apertura del menú vía JS */
+    .navbar.active {
+        right: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Ocultar el isotipo fuera del menú desplegable móvil (en pantallas grandes) */
+@media (min-width: 901px) {
+    .nav-isotipo-mobile {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     .nav-menu {
@@ -2324,156 +2368,88 @@ body {
 =            TABLA
 =========================================================*/
 
-.tabla_tematicas{
+/*=========================================================
+=            TABLA Y CONTENEDOR
+=========================================================*/
 
-    width:100%;
-    max-width:700px;
+/* Contenedor que maneja el desbordamiento en pantallas pequeñas */
+.tabla_contenedor {
+    width: 100%;
+    max-width: 700px;
     margin: 2px auto;
-    border-collapse:collapse;
-    background:rgba(255,255,255,.82);
-    backdrop-filter:blur(10px);
-    border-radius:8px;
-    overflow:hidden;
-    box-shadow:0 12px 35px rgba(0,0,0,.18);
-
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-
-.tabla_tematicas th{
-
-    background:#2b3b2d;
-
-    color:#fff;
-
-    padding:10px 30px;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    text-align:center;
-
+.tabla_tematicas {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
 }
 
+.tabla_tematicas th {
+    background: #2b3b2d;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
 
-.tabla_tematicas td{
-
-    padding:8px 16px;
-
-    color:#542d0c;
-
-    font-size:14px;
-
-    line-height:1.4;
+.tabla_tematicas td {
+    padding: 12px 16px;
+    color: #542d0c;
+    font-size: 14px;
+    line-height: 1.4;
     text-align: left;
-
-    vertical-align:top;
-
+    vertical-align: middle;
 }
 
-
-.tabla_tematicas tbody tr:nth-child(even){
-
-    background:rgba(255,255,255,.45);
-
+.tabla_tematicas tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.45);
 }
 
-
-.tabla_tematicas tbody tr:hover{
-
-    background:rgba(211,84,0,.08);
-
-    transition:.25s;
-
+.tabla_tematicas tbody tr:hover {
+    background: rgba(211, 84, 0, 0.08);
+    transition: background 0.25s ease;
 }
 
-
-/* Primera columna */
-
-.tabla_tematicas td:first-child,
-.tabla_tematicas th:first-child{
-
-    width:28%;
-
-    font-weight:600;
-
+/* Distribución de columnas */
+.tabla_tematicas th:first-child,
+.tabla_tematicas td:first-child {
+    width: 30%;
+    font-weight: 600;
 }
 
-
-/* Segunda columna */
-
-.tabla_tematicas td:last-child,
-.tabla_tematicas th:last-child{
-
-    width:72%;
-
+.tabla_tematicas th:last-child,
+.tabla_tematicas td:last-child {
+    width: 70%;
 }
-
 
 /*=========================================================
-=            BOTONES
+=            RESPONSIVE TABLA
 =========================================================*/
 
-.tematicas_info .botones-inicio{
+@media (max-width: 768px) {
+    .tabla_tematicas {
+        min-width: 500px; /* Asegura un ancho mínimo para evitar que el texto se comprima demasiado */
+    }
 
-    margin-top:45px;
+    .tabla_tematicas th {
+        font-size: 15px;
+        padding: 12px;
+    }
 
+    .tabla_tematicas td {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
 }
-
-
-/*=========================================================
-=            RESPONSIVE
-=========================================================*/
-
-@media(max-width:1200px){
-
-    .tematicas_info{
-
-        max-width:95%;
-
-    }
-
-    .tabla_tematicas{
-
-        max-width:100%;
-
-    }
-
-}
-
-
-@media(max-width:768px){
-
-    .tabla_tematicas{
-
-        display:block;
-
-        overflow-x:auto;
-
-        white-space:nowrap;
-
-        border-radius:12px;
-
-    }
-
-    .tabla_tematicas th{
-
-        font-size:18px;
-
-        padding:18px;
-
-    }
-
-    .tabla_tematicas td{
-
-        font-size:15px;
-
-        padding:18px;
-
-    }
-
-}
-
 
 /* =========================================================
    SPEAKERS

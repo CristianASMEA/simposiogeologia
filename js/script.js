@@ -917,18 +917,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Abrir o cerrar el menú al hacer clic en el botón hamburguesa
     if (navToggle && navbar) {
-        navToggle.addEventListener("click", () => {
+        navToggle.addEventListener("click", (e) => {
+            e.stopPropagation(); // Evita que el clic se propague al document
             navToggle.classList.toggle("active");
             navbar.classList.toggle("active");
         });
     }
 
-    // Cerrar automáticamente el menú al hacer clic en cualquier opción (en móviles)
+    // Cerrar automáticamente el menú al hacer clic en cualquier opción
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
             if (navbar.classList.contains("active")) {
                 navToggle.classList.remove("active");
                 navbar.classList.remove("active");
+            }
+        });
+    });
+
+    // Cerrar el menú al hacer clic/tap en cualquier lugar fuera de la barra de navegación
+    document.addEventListener("click", (e) => {
+        if (navbar && navbar.classList.contains("active")) {
+            // Si el clic no fue dentro de la barra (.navbar) ni en el botón (.nav-toggle)
+            if (!navbar.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.classList.remove("active");
+                navbar.classList.remove("active");
+            }
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleccionar el video promocional
+    const videoPromocional = document.getElementById("videoPromocional");
+
+    if (videoPromocional) {
+        // Crear el observador de intersección
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                // Si el video deja de ser visible en la pantalla (menos del 25% visible)
+                if (!entry.isIntersecting) {
+                    videoPromocional.pause();
+                }
+            });
+        }, {
+            threshold: 0.25 // Detiene el video cuando solo el 25% o menos es visible
+        });
+
+        // Iniciar la observación del video
+        observer.observe(videoPromocional);
+    }
+
+    // Detener el video al hacer clic en los enlaces del menú de navegación
+    const navLinks = document.querySelectorAll('.nav-link, .nav-link-btn');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (videoPromocional) {
+                videoPromocional.pause();
             }
         });
     });
