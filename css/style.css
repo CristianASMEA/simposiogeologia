@@ -2098,218 +2098,96 @@ body {
 }
 
 /* =========================================================
-   BOTÓN WHATSAPP
+   BOTONES FLOTANTES: WHATSAPP CENTRADO E IR ARRIBA DERECHA
 ========================================================= */
 
+/* Botón WhatsApp: Centrado horizontalmente en la parte inferior */
 .btn-whatsapp {
-
     position: fixed;
-
-    right: 50%;
-
-    bottom: 30px;
-
-    transform: translateX(50%);
-
-    width: 120px;
-
-    height: 120px;
-
+    bottom: 50px; /* Distancia desde abajo */
+    left: 50%; /* Lo empuja a la mitad de la pantalla */
+    transform: translateX(-50%); /* Lo centra exactamente en su propio eje */
+    width: 65px;
+    height: 65px;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     z-index: 2000;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
-
-
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
-
-
-/* ICONO WHATSAPP */
 
 .btn-whatsapp img {
-
-    width: 80px;
-
-    height: 80px;
-
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-
     display: block;
-
 }
 
-
-/* EFECTO HOVER */
-
+/* Efecto hover: Es MUY importante mantener el translateX(-50%) aquí */
 .btn-whatsapp:hover {
-
-    transform:
-        translateX(50%)
-        translateY(-5px);
-
+    transform: translateX(-50%) translateY(-5px) scale(1.05);
+    filter: drop-shadow(0 8px 15px rgba(37, 211, 102, 0.4));
 }
 
-
-/* =========================================================
-   BOTÓN IR ARRIBA
-========================================================= */
-
+/* Botón Ir Arriba: Esquina inferior derecha a la misma altura */
 .btn-arriba {
-
     position: fixed;
-
-    right: 35px;
-
-    bottom: 45px;
-
+    right: 50px;
+    bottom: 35px; /* Misma distancia desde abajo que el de WhatsApp */
     width: 55px;
-
     height: 55px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    /*color: white;
-
-    background: #c94d00;
-
-    text-decoration: none;*/
-
-
     border-radius: 5px;
-
     z-index: 2000;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
-
+    transition: transform 0.3s ease;
 }
 
-
-/* EFECTO HOVER */
+.btn-arriba img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 
 .btn-arriba:hover {
-
-    /*background: #e36c16;*/
-
-    transform:
-        translateY(-5px);
-
+    transform: translateY(-5px);
 }
 
-
 /* =========================================================
-   RESPONSIVE - TABLETS
+   RESPONSIVE - TABLETS Y MÓVILES
 ========================================================= */
 
 @media (max-width: 900px) {
-
-
     .btn-whatsapp {
-
-        width: 60px;
-
-        height: 60px;
-
         bottom: 25px;
-
+        width: 60px;
+        height: 60px;
     }
-
-
-    .btn-whatsapp img {
-
-        width: 36px;
-
-        height: 36px;
-
-    }
-
 
     .btn-arriba {
-
         right: 25px;
-
-        bottom: 25px;
-
+        bottom: 25px; /* Se mantiene a la misma altura que WhatsApp */
         width: 50px;
-
         height: 50px;
-
-        font-size: 32px;
-
     }
-
 }
-
-
-/* =========================================================
-   RESPONSIVE - MÓVILES
-========================================================= */
 
 @media (max-width: 768px) {
-
-
     .btn-whatsapp {
-
-        right: 50%;
-
         bottom: 20px;
-
         width: 55px;
-
         height: 55px;
-
-        transform:
-            translateX(50%);
-
     }
-
-
-    .btn-whatsapp img {
-
-        width: 32px;
-
-        height: 32px;
-
-    }
-
 
     .btn-arriba {
-
-        right: 15px;
-
-        bottom: 20px;
-
+        right: 20px;
+        bottom: 20px; /* Se mantiene a la misma altura que WhatsApp */
         width: 45px;
-
         height: 45px;
-
-        font-size: 28px;
-
     }
-
-
-    .btn-whatsapp:hover {
-
-        transform:
-            translateX(50%)
-            translateY(-4px);
-
-    }
-
 }
-
 
 
 /*=========================================================
@@ -4811,11 +4689,14 @@ body {
     height: 35px;
   }
 
-  /* Footer Principal */
+ /* Footer Principal */
 .site-footer {
     width: 100%;
     font-family: inherit;
-    background-color: #ffffff; /* Ajusta según el fondo si usas imagen transparente */
+    background-color: #ffffff; 
+    color: #333333; /* CAMBIADO: Ahora es gris oscuro para que se vea sobre blanco */
+    /*padding-bottom: 90px;  IMPORTANTE: Espacio libre para que los botones flotantes descansen aquí */
+    position: relative;
 }
 
 .footer-top {
@@ -4836,31 +4717,26 @@ body {
 .footer-left {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinea todo el bloque a la izquierda */
+    justify-content: flex-start;
     gap: 20px;
 }
 
 /* Contenedor de iconos en horizontal */
 .social-icons {
-
- 
     display: flex;
-    flex-direction: row; /* Coloca los iconos en fila de izquierda a derecha */
+    flex-direction: row;
     align-items: center;
-    gap: 10px; /* Espaciado horizontal entre cada icono */
+    gap: 10px;
 }
 
 .social-icons a {
     width: 36px;
     height: 36px;
-    /*background-color: #333333;  Agrega esto si tus SVG no traen fondo circular */
-    /*border-radius: 50%;*/
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     transition: opacity 0.2s ease;
-
 }
 
 .social-icons a:hover {
@@ -4875,9 +4751,6 @@ body {
     height: 36px;
     object-fit: contain;
 }
-
-
-
 
 .footer-contact-info {
     font-size: 0.9rem;
@@ -4902,6 +4775,23 @@ body {
 
 .footer-contact-info a:hover {
     text-decoration: underline;
+}
+
+/* =========================================================
+   NUEVO: BARRA INFERIOR DE DERECHOS RESERVADOS
+========================================================= */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding: 15px 20px 0 20px;
+    border-top: 1px solid #eeeeee; /* Línea separadora muy suave */
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ffffff; /* Color visible y legible */
+    font-size: 0.85rem;
+    font-weight: 400;
 }
 
 /* Sección Derecha: Logos */
