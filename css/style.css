@@ -4920,3 +4920,18 @@ body {
     }
 }
 
+.objetivos_header {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro el icono con el texto */
+    gap: 15px;           /* Espacio horizontal entre el icono y el título */
+    margin-bottom: 20px; /* Separación con respecto a la lista de abajo */
+}
+
+/* Ajusta los márgenes previos del icono y del título si es necesario */
+.icono_objetivos {
+    margin: 0;
+}
+
+.titulo_objetivos {
+    margin: 0;
+}
