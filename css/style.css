@@ -3,107 +3,71 @@
 ========================================================= */
 
 * {
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-       text-decoration: none;
-       color: #3a3a3a;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #3a3a3a;
 }
-
 
 /* =========================================================
    HTML
 ========================================================= */
 
 html {
-
     width: 100%;
-
     min-height: 100%;
-
     scroll-behavior: smooth;
-
 }
-
 
 /* =========================================================
    BODY
 ========================================================= */
 
 body {
-
     width: 100%;
-
     min-height: 100vh;
-
     font-family:
         "Poppins",
         Arial,
         Helvetica,
         sans-serif;
-
     background: #000;
-
     color: white;
-
     overflow-x: hidden;
-
 }
-
 
 /* =========================================================
-   HEADER FIJO
+ MENÙ PRINCIPAL FIJO
 ========================================================= */
 
-.header {
-
+.menu-principal-fijo {
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     min-height: 90px;
-
     z-index: 1000;
-
-
 }
-
 
 /* =========================================================
    DEGRADADO DEL MENÚ
 ========================================================= */
 
 .degradado_menu {
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 180px; 
-
     background:
-
         linear-gradient(
             to bottom,
-
             rgb(255, 255, 255) 0%,
             rgba(255, 255, 255, 0) 100%
         );
-
     z-index: 0;
-
     pointer-events: none;
-
 }
 
 
@@ -131,11 +95,10 @@ body {
 
 /* Logo responsivo */
 .logo {
-
-        margin-top: 18px;
-    margin-left: 50px;
+    margin-top: 18px;
+    margin-left: 0px;
     width: 100%;
-    max-width: 500px; /* Tamaño máximo controlado */
+    max-width: 620px; /* Tamaño máximo controlado */
     flex-shrink: 1;
 }
 
@@ -190,6 +153,7 @@ body {
 /* =========================================================
    MEDIA QUERY PARA MÓVILES (Menú Hamburguesa Activo)
 ========================================================= */
+
 @media (max-width: 900px) {
     .header_contenido {
         padding: 15px 20px;
@@ -255,7 +219,6 @@ body {
 
 .nav-link:hover {
     text-decoration: none;
-
     color: #e36c16;
 
 }
@@ -264,95 +227,60 @@ body {
 .nav-link.active {
     text-decoration: none;
     color: #e36c16;
-
 }
 
 
 .nav-link.active::after {
     text-decoration: none;
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: -8px;
-
     width: 100%;
-
     height: 2px;
-
-
-
 }
-
-
 
 
 .nav-link-btn {
     text-decoration: none;
-
     position: relative;
-
     display: inline-block;
-
     color: rgb(10, 10, 10);
-
     text-decoration: none;
-
     font-family:
         "Poppins",
         Arial,
         sans-serif;
-
     font-size: 16px;
-
     font-weight: 500;
-
     white-space: nowrap;
-
     cursor: pointer;
-
     transition:
         color 0.3s ease;
-
 }
 
 
 .nav-link-btn:hover {
-
     color: #ffffff;
     text-decoration: none;
-
 }
 
 
 .nav-link-btn.active {
-
     text-decoration: none;
     color: #e36c16;
-
 }
 
 
 .nav-link-btn.active::after {
     text-decoration: none;
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: -8px;
-
     width: 100%;
-
     height: 2px;
-
     background: #e36c16;
-
 }
 
 
@@ -363,19 +291,12 @@ body {
 .seccion {
 
     position: relative;
-
     width: 100%;
-
     min-height: 100vh;
-
     overflow: hidden;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
 }
 
 
@@ -1722,7 +1643,7 @@ body {
    POSICIÓN DEL FONDO DE OBJETIVOS
 ========================================================= */
 
-.seccion-objetivos
+.seccion-objetivos, .seccion-speakers, .seccion-agenda
 .fondo_seccion img {
 
     object-position:
@@ -1730,22 +1651,23 @@ body {
 
 }
 
-
 /* =========================================================
    OVERLAY DE OBJETIVOS
 ========================================================= */
 
-.seccion-objetivos
+
+
+.seccion-objetivos .seccion-speakers, .seccion-agenda
 .overlay_seccion {
 
     background:
 
         linear-gradient(
             to right,
-            rgba(255, 255, 255, 0.85) 0%,
-            rgba(255, 255, 255, 0.65) 30%,
-            rgba(255, 255, 255, 0.20) 60%,
-            rgba(255, 255, 255, 0.05) 100%
+            rgba(255,255,255,0.92) 0%,
+            rgba(255,255,255,0.75) 28%,
+            rgba(255,255,255,0.25) 55%,
+            rgba(255,255,255,0) 100%
         );
 
 }
@@ -2049,46 +1971,33 @@ body {
 
 
 /*=========================================================
-=            TEMÁTICAS
+=  TEMÁTICAS
 =========================================================*/
 
-.seccion-tematicas, .contenido_objetivos, seccion-registro {
+.seccion-tematicas {
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     width:100%;
 
 }
 
 
 .tematicas_info {
-    text-align:center;
 
+    text-align:left;
     width:100%;
-
     max-width:1400px;
-
     margin:0 auto;
-
     display:flex;
-
     flex-direction:column;
-
-    align-items:center;
-
-    text-align:center;
-
     color:#542d0c;
 
 }
 
-
 /*=========================================================
-=            TABLA Y CONTENEDOR
+=  TABLA Y CONTENEDOR
 =========================================================*/
 
 /* Contenedor que maneja el desbordamiento en pantallas pequeñas */
@@ -2151,7 +2060,7 @@ body {
 }
 
 /*=========================================================
-=            RESPONSIVE TABLA
+=  RESPONSIVE TABLA
 =========================================================*/
 
 @media (max-width: 768px) {
@@ -2177,43 +2086,9 @@ body {
 .seccion-speakers {
 
     position: relative;
-
     min-height: 100vh;
 
 }
-
-
-/* =========================================================
-   FONDO
-========================================================= */
-
-.seccion-speakers
-.fondo_seccion img {
-
-    object-position: center center;
-
-}
-
-
-/* =========================================================
-   OVERLAY
-========================================================= */
-
-.seccion-speakers
-.overlay_seccion {
-
-    background:
-
-        linear-gradient(
-            to right,
-            rgba(255,255,255,0.92) 0%,
-            rgba(255,255,255,0.75) 28%,
-            rgba(255,255,255,0.25) 55%,
-            rgba(255,255,255,0) 100%
-        );
-
-}
-
 
 /* =========================================================
    CONTENIDO SPEAKERS
@@ -2222,26 +2097,17 @@ body {
 .contenido_speakers {
 
     position: relative;
-
     z-index: 10;
-
     width: 100%;
-
     max-width: 1450px;
-
     min-height: 100vh;
-
     margin: 0 auto;
-
     padding:
         120px
         50px
         50px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: flex-start;
 
 }
@@ -2254,15 +2120,10 @@ body {
 .speakers_info {
 
     width: 100%;
-
     max-width: 800px;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
-
     color: #542d0c;
 
 }
@@ -2276,13 +2137,9 @@ body {
 .carousel_speakers {
 
     position: relative;
-
     width: 100%;
-
     max-width: 800px;
-
     display: flex;
-
     align-items: center;
 
 }
@@ -2295,8 +2152,14 @@ body {
 .speaker_viewport {
 
     width: 100%;
-
     overflow: hidden;
+    /* Añado padding arriba y abajo para darle espacio al movimiento de translateY */
+    padding-top: 15px; 
+    padding-bottom: 15px;
+
+    /* Compensamos el espacio extra para mantener el diseño alineado */
+    margin-top: -15px;
+    margin-bottom: -15px;
 
 }
 
@@ -2308,9 +2171,7 @@ body {
 .speaker_track {
 
     display: flex;
-
     width: 100%;
-
     transition:
         transform 0.5s ease;
 
@@ -2325,21 +2186,14 @@ body {
 
     flex:
         0 0 33.333333%;
-
     min-width: 0;
-
     padding:
         0
         12px;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     text-align: center;
-
     outline: none;
 
 }
@@ -2352,15 +2206,12 @@ body {
 .speaker_photo {
 
     width: 160px;
-
-    height: 160px;
-
+    height: 220px;
     padding: 0;
-
     border: 4px solid
         rgba(255,255,255,0.90);
 
-    border-radius: 50%;
+    border-radius: 8%;
 
     overflow: hidden;
 
@@ -2572,7 +2423,7 @@ body {
 
 
 .speaker_arrow_right {
-
+    
     right: -22px;
 
 }
@@ -2608,20 +2459,13 @@ body {
 .speaker_dot {
 
     width: 9px;
-
     height: 9px;
-
     padding: 0;
-
     border: none;
-
     border-radius: 50%;
-
     background:
         rgba(84,45,12,0.35);
-
     cursor: pointer;
-
     transition:
         width 0.3s ease,
         background 0.3s ease,
@@ -2641,9 +2485,7 @@ body {
 .speaker_dot.active {
 
     width: 25px;
-
     border-radius: 10px;
-
     background:
         #542d0c;
 
@@ -2657,9 +2499,7 @@ body {
 .speaker_buttons {
 
     justify-content: flex-start;
-
     width: 100%;
-
     margin-top: 30px;
 
 }
@@ -3626,49 +3466,15 @@ body {
 ========================================================= */
 
 .seccion-agenda {
-
+    
     position: relative;
-
     width: 100%;
-
     min-height: 100vh;
-
     overflow: hidden;
 
 }
 
 
-/* =========================================================
-   FONDO DE AGENDA
-========================================================= */
-
-.seccion-agenda
-.fondo_seccion img {
-
-    object-position:
-        center center;
-
-}
-
-
-/* =========================================================
-   OVERLAY DE AGENDA
-========================================================= */
-
-.seccion-agenda
-.overlay_seccion {
-
-    background:
-
-        linear-gradient(
-            to right,
-            rgba(255,255,255,0.92) 0%,
-            rgba(255,255,255,0.78) 35%,
-            rgba(255,255,255,0.45) 65%,
-            rgba(255,255,255,0.20) 100%
-        );
-
-}
 
 
 /* =========================================================
