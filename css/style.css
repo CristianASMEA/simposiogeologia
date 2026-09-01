@@ -592,49 +592,7 @@ body {
 }
 
 
-/* =========================================================
-   BOTÓN LEER MÁS
-
-
-.btn-leer {
-
-    display: inline-block;
-
-    margin-top: 12px;
-
-    padding:
-        8px
-        20px;
-
-    color: white;
-
-    background: #333;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    font-weight: 500;
-
-    border-radius: 20px;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
-
-}
-
-
-.btn-leer:hover {
-
-    background: #e36c16;
-
-    transform:
-        translateY(-3px);
-
-}
-
-========================================================= */
+ 
 
 /* =========================================================
    CONTENEDOR DE BOTONES
@@ -1432,36 +1390,7 @@ body {
 }
 
 
-/* =========================================================
-   TÍTULOS
-   INICIO Y OBJETIVOS
-========================================================= */
 
-.presentacion h1,
-.titulo_objetivos {
-
-    margin: 0 0 20px 0;
-
-    color: #542d0c;
-
-    font-family:
-        "Poppins",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            38px,
-            4vw,
-            60px
-        );
-
-    font-weight: 600;
-
-    line-height: 1.1;
-
-}
 
 
 /* =========================================================
@@ -1497,39 +1426,8 @@ body {
 }
 
 
-/* =========================================================
-   ICONO DE OBJETIVOS
-========================================================= */
-
-.icono_objetivos {
-
-    width: 80px;
-
-    height: 80px;
-
-    margin:
-        15px
-        0
-        20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
 
 
-.icono_objetivos span {
-
-    color: #805126;
-
-    font-size: 55px;
-
-    line-height: 1;
-
-}
 
 
 /* =========================================================
@@ -1930,17 +1828,6 @@ body {
     }
 
 
-    .btn-leer,
-    .btn-leer-mas,
-    .btn-registro {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
     .video_inicio {
 
         width: 90%;
@@ -1982,38 +1869,9 @@ body {
     }
 
 
-    .presentacion h1,
-    .titulo_objetivos {
-
-        font-size: 34px;
-
-    }
-
-
     .presentacion p {
 
         font-size: 12px;
-
-    }
-
-
-    .icono_objetivos {
-
-        width: 60px;
-
-        height: 60px;
-
-        margin:
-            15px
-            auto
-            20px;
-
-    }
-
-
-    .icono_objetivos span {
-
-        font-size: 45px;
 
     }
 
@@ -2078,7 +1936,7 @@ body {
 
 
     .presentacion h1,
-    .titulo_objetivos {
+    .titulo_seccion {
 
         font-size: 30px;
 
@@ -2194,7 +2052,7 @@ body {
 =            TEMÁTICAS
 =========================================================*/
 
-.seccion-tematicas .contenido_objetivos{
+.seccion-tematicas, .contenido_objetivos, seccion-registro {
 
     display:flex;
 
@@ -2207,7 +2065,8 @@ body {
 }
 
 
-.tematicas_info{
+.tematicas_info {
+    text-align:center;
 
     width:100%;
 
@@ -2227,24 +2086,6 @@ body {
 
 }
 
-
-.tematicas_info .titulo_objetivos{
-
-    text-align:center;
-
-}
-
-
-.tematicas_info .icono_objetivos{
-
-    margin:20px auto 35px;
-
-}
-
-
-/*=========================================================
-=            TABLA
-=========================================================*/
 
 /*=========================================================
 =            TABLA Y CONTENEDOR
@@ -2426,76 +2267,6 @@ body {
 
 }
 
-
-/* =========================================================
-   TÍTULO
-========================================================= */
-
-.titulo_speakers {
-
-    margin:
-        0
-        0
-        15px
-        0;
-
-    color: #542d0c;
-
-    font-family:
-        "Poppins",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            38px,
-            4vw,
-            60px
-        );
-
-    font-weight: 600;
-
-    line-height: 1.1;
-
-}
-
-
-/* =========================================================
-   ICONO
-========================================================= */
-
-.icono_speakers {
-
-    width: 70px;
-
-    height: 70px;
-
-    margin:
-        30px
-        0
-        35px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
-
-
-.icono_speakers img {
-
-    display: block;
-
-    width: 80px;
-
-    height: 80px;
-
-    object-fit: contain;
-
-}
 
 
 /* =========================================================
@@ -3436,16 +3207,6 @@ body {
     }
 
 
-    .icono_speakers {
-
-        margin-left:
-            auto;
-
-        margin-right:
-            auto;
-
-    }
-
 
     .carousel_speakers {
 
@@ -3563,31 +3324,6 @@ body {
     }
 
 
-    .icono_speakers {
-
-        width:
-            60px;
-
-        height:
-            60px;
-
-        margin:
-            5px
-            auto
-            20px;
-
-    }
-
-
-    .icono_speakers img {
-
-        width:
-            55px;
-
-        height:
-            55px;
-
-    }
 
 
     .carousel_speakers {
@@ -4920,18 +4656,82 @@ body {
     }
 }
 
-.objetivos_header {
+.seccion_header {
     display: flex;
     align-items: center; /* Alinea verticalmente al centro el icono con el texto */
     gap: 15px;           /* Espacio horizontal entre el icono y el título */
     margin-bottom: 20px; /* Separación con respecto a la lista de abajo */
 }
 
-/* Ajusta los márgenes previos del icono y del título si es necesario */
-.icono_objetivos {
-    margin: 0;
+
+/* =========================================================
+   ICONO DE OBJETIVOS
+========================================================= */
+
+.icono_objetivos,
+.icono_tematicas,
+.icono_speakers,
+.icono_agenda,
+.icono_registro,
+.icono_contactos {
+    width: 75px;
+    height: 75px;
+    margin:
+        15px
+        0
+        30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.titulo_objetivos {
-    margin: 0;
+/* =========================================================
+   ICONO MANTIENE LAS MISMA ALTURA EN LOS ICONOS Y AJUSTA PROPORCIONALMENTE EL ANCHO
+========================================================= */
+
+.icono-contenedor {
+    height: 75px;
+    width: auto;
+    margin: 15px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-contenedor img,
+.icono-contenedor svg {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+
+
+/* =========================================================
+   TÍTULOS SECCIONES
+========================================================= */
+
+.titulo_seccion {
+
+    margin: 0 0 20px 0;
+
+    color: #542d0c;
+
+    font-family:
+        "Poppins",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            60px
+        );
+
+    font-weight: 600;
+
+    line-height: 1.1;
+
 }
