@@ -1986,7 +1986,6 @@ body {
 
 .tematicas_info {
 
-    text-align:left;
     width:100%;
     max-width:1400px;
     margin:0 auto;
@@ -2004,7 +2003,6 @@ body {
 .tabla_contenedor {
     width: 100%;
     max-width: 700px;
-    margin: 2px auto;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -2078,6 +2076,26 @@ body {
         padding: 10px 12px;
     }
 }
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    /* Centra el bloque de Temáticas y su encabezado solo en móviles */
+    .tematicas_info {
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+
+
+
 
 /* =========================================================
    SPEAKERS
@@ -2324,21 +2342,14 @@ body {
 
 .speaker_card p {
 
-    margin:
-        4px
-        0
-        0;
-
+    margin: 4px 0 0;
     color: #542d0c;
-
     font-family:
         "Poppins",
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 11px;
-
     font-weight: 400;
 
 }
@@ -2423,7 +2434,7 @@ body {
 
 
 .speaker_arrow_right {
-    
+
     right: -22px;
 
 }
@@ -3481,7 +3492,7 @@ body {
    CONTENEDOR PRINCIPAL DE AGENDA
 ========================================================= */
 
-.contenido_agenda {
+.contenido_agenda, .contenido_registro {
 
     position: relative;
 
@@ -3960,16 +3971,6 @@ body {
    SECCIÓN REGISTRO
 ========================================================= */
 
-.contenido_seccion_registro {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 120px 20px 60px;
-    text-align: center;
-}
-
 .titulo_registro {
     margin-bottom: 40px;
     color: #542d0c;
@@ -4033,7 +4034,9 @@ body {
     font-size: 20px;
     font-weight: 600;
 }
-
+.texto-tarjeta-registro { 
+    text-align: center;
+}
 
 /* Configuración de la sección principal */
 .seccion-contactos {
@@ -4541,3 +4544,4 @@ body {
     line-height: 1.1;
 
 }
+
