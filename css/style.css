@@ -1998,35 +1998,36 @@ body {
 
 
 @media (max-width: 768px) {
-    /* Centra la información completa de la sección Temáticas */
+    /* Centra todo el bloque informativo de la sección */
     .tematicas_info {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    /* Centra el contenedor del título junto con el icono */
+    /* Encabezado: Icono a la izquierda y Texto a la derecha, centrados como un bloque */
     .seccion-tematicas .seccion_header {
-        flex-direction: column; /* Apila el icono arriba y el texto abajo */
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        display: flex;
+        flex-direction: row;        /* Mantiene el icono a la izquierda */
+        justify-content: center;   /* Centra horizontalmente el conjunto completo */
+        align-items: center;       /* Alinea verticalmente el icono con el texto */
+        gap: 12px;                 /* Espacio entre el icono y el texto */
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
-    /* Resetea los márgenes automáticos o laterales del icono en móvil */
+    /* Resetear márgenes individuales para no descuadrar el centrado */
     .seccion-tematicas .icono-contenedor,
     .seccion-tematicas .icono_tematicas {
-        margin: 0 0 10px 0;
+        margin: 0;
     }
 
-    /* Asegura que el título no mantenga márgenes desalineados */
     .seccion-tematicas .titulo_seccion {
         margin: 0;
-        text-align: center;
+        text-align: left; /* Mantiene la lectura natural junto al icono */
     }
 }
-
 
 
 
@@ -2102,10 +2103,11 @@ body {
 
 @media (max-width: 768px) {
     .tabla_contenedor {
-        overflow-x: visible; /* Elimina la necesidad de scroll horizontal */
+        overflow-x: visible;
+        width: 100%;
     }
 
-    /* Ocultar los encabezados tradicionales de la tabla */
+    /* Ocultar encabezados de la tabla en móvil */
     .tabla_tematicas thead {
         display: none;
     }
@@ -2116,34 +2118,36 @@ body {
     .tabla_tematicas td {
         display: block;
         width: 100% !important;
+        box-sizing: border-box;
     }
 
-    /* Formato de tarjeta para cada fila */
+    /* Tarjeta individual por fila */
     .tabla_tematicas tr {
         margin-bottom: 15px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
-        padding: 10px 15px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 12px 15px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    /* Estilo para la primera celda (Título de la temática) */
+    /* Celda del Título / Temática */
     .tabla_tematicas td:first-child {
         font-size: 16px;
         font-weight: 700;
-        color: #e36c16; /* Destaca la temática */
+        color: #e36c16;
         border-bottom: 1px solid rgba(84, 45, 12, 0.15);
         padding-bottom: 8px;
         margin-bottom: 8px;
         text-align: center;
     }
 
-    /* Estilo para la segunda celda (Descripción) */
+    /* Celda de la Descripción */
     .tabla_tematicas td:last-child {
         font-size: 13.5px;
         color: #542d0c;
         padding-top: 0;
         text-align: center;
+        line-height: 1.4;
     }
 }
 
